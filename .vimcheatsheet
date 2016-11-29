@@ -1,0 +1,45 @@
+"ayy 'copy line to buffer a
+"ap  'paste content of buffer a
+zt   'moves curr line to top
+zz   'moves curr line to middle
+zb   'moves curr line to bottom
+$    'go to end of the line
+}    'go to next empty line
+{    'go to previous empty line
+"    'go to last edition
+I    'insert at the start of line
+a    'insert after the cursor
+ZZ   'save and quit
+gv   'remark last visualselection
+^T   'indent on insert mode
+^D   'unindent on insert mode
+mx   'create bookmark
+'x   'go to mark x
+^p"  'past on insert mode
+,W   'removes trailing spaces
+,d   'deletes without cut
+
+# NerdCommenter
+,ci  'toggle comment
+,cy  'comment and yank
+,c$  'comments til end of line 
+
+# CtrlP
+C-x  'open in split
+C-v  'open in vsplit
+C-t  'open in new tab
+
+# Tabs
+tn   'new tab
+tk   'next tab
+tj   'previous tab
+td   'close tab
+
+# Nerdtree
+o    'open/close
+x    'close parent
+p    'go to parent
+P    'go to Root
+C    'change tree to selected
+t    'open in new tab
+T    'open silently in new tab
