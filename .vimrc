@@ -109,7 +109,7 @@ let g:jsx_ext_required = 0
 " Legacy helpers {{{ 
 "
 " run perl tests inside vagrant
-map <Leader>p :!make unit-test path=desarrollo/% <CR>
+map <Leader>p :!make unit-test path=% <CR>
 
 "}}}
 
@@ -126,12 +126,12 @@ endfunction
 
 function! OpenTest()
     if (&ft == 'perl')
-      :call Edit(substitute(substitute(expand('%:p'), 'apps\/lib\/perl_mvc', 't\/unit', 'g'), '\.pm', '.t', 'g'))
+      :call Edit(substitute(substitute(expand('%'), 'apps\/lib\/perl_mvc', 't\/unit', 'g'), '\.pm', '.t', 'g'))
     endif
 endfunction
 function! OpenFile()
     if (&ft == 'perl')
-      :call Edit(substitute(substitute(expand('%:p'), 't\/unit', 'apps\/lib\/perl_mvc', 'g'), '\.t', '.pm', 'g'))
+      :call Edit(substitute(substitute(expand('%'), 't\/unit', 'apps\/lib\/perl_mvc', 'g'), '\.t', '.pm', 'g'))
     endif
 endfunction
 
