@@ -142,3 +142,14 @@ map <Leader>f :call SplitVertically()<CR><C-w>l:call OpenFile()<CR>
 map <Leader>if :call SplitHorizontally()<CR><C-w>l:call OpenFile()<CR>
 
 " }}}
+"
+
+" Elm aliases {{{
+
+:au BufWritePost *.elm ElmMake
+
+let g:elm_format_autosave = 1
+
+map <Leader>ed :ElmErrorDetail<CR>
+
+" }}}
