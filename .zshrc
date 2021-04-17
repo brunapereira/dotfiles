@@ -1,8 +1,7 @@
 # ZSH Specifics {{{
 export ZSH="$HOME/.oh-my-zsh" # Path to your oh-my-zsh installation.
-source $ZSH/oh-my-zsh.sh
-
 ZSH_THEME="robbyrussell" # Theme
+source $ZSH/oh-my-zsh.sh
 
 plugins=(git z)
 # }}}
