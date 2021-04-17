@@ -1,0 +1,57 @@
+"ayy -copy line to buffer a
+"ap  -paste content of buffer a
+zt   -moves curr line to top
+zz   -moves curr line to middle
+zb   -moves curr line to bottom
+}    -go to next empty line
+{    -go to previous empty line
+I    -insert at the start of line
+a    -insert after the cursor
+ZZ   -save and quit
+gv   -remark last visualselection
+^T   -indent on insert mode
+^D   -unindent on insert mode
+mx   -create bookmark
+'x   -go to mark x
+^p"  -past on insert mode
+,d   -deletes without cut
+
+# NerdCommenter
+,ci  -toggle comment
+,cy  -comment and yank
+,c$  -comments til end of line
+
+# Tabs
+tn   -new tab
+tk   -nex tab
+tj   -previous tab
+td   -close tab
+
+# Nerdtree
+o    -open/close
+x    -close parent
+p    -go to parent
+P    -go to Root
+C    -change tree to selected
+t    -open in new tab
+T    -open silently in new tab
+
+# FZF
+:Files        -All files
+:GFiles       -Git Files
+:GFiles?      -Git Status
+:Colors       -Change colorschema
+:Helptags     -Show all available tags
+CTRL-T        -Open in new tab
+CTRL-X/CTRL-V -Open split
+
+# Fugititive
+:Git blame
+:Commits
+
+# Conjure
+,tn -Run tests from current file
+,tN -Run tests from open NS
+,eb -Refresh file
+,rr -Refresh entire workspace
+,gd -Go to definition
