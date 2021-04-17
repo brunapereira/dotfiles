@@ -41,7 +41,7 @@ T    -open silently in new tab
 :GFiles       -Git Files
 :GFiles?      -Git Status
 :Colors       -Change colorschema
-:Helptags     -Show all available tags
+:Helptags     -Show available tags
 CTRL-T        -Open in new tab
 CTRL-X/CTRL-V -Open split
 
@@ -55,3 +55,9 @@ CTRL-X/CTRL-V -Open split
 ,eb -Refresh file
 ,rr -Refresh entire workspace
 ,gd -Go to definition
+,vs -View source
+,cf -Attach to a connection
+
+# Find and replace
+:Rg -Open screen to search
+,R  -Replace all under cursor
