@@ -96,13 +96,18 @@ Plug 'dense-analysis/ale' "Linting
 Plug 'preservim/nerdcommenter' "Comments
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim' " Search and much more
 
 Plug 'tpope/vim-fugitive' " Git awesome commands
 
 Plug 'airblade/vim-gitgutter' " Git modified lines
 
 Plug 'szw/vim-maximizer' " Toggle maximize windows
+
+" vim-jack-in and its dependencies to start a REPL from Vim
+Plug 'tpope/vim-dispatch'
+Plug 'clojure-vim/vim-jack-in'
+Plug 'radenling/vim-dispatch-neovim'
 
 call plug#end()
 
