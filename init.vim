@@ -59,7 +59,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " }}}
 
-" <leader> + \. clear highlight {{{
+" <leader> + / clear highlight {{{
 map <Leader>/ :nohlsearch<CR>
 " }}}
 
@@ -79,13 +79,11 @@ nmap <silent> <leader>ez :vsp ~/.zshrc<CR>
 " Plugins {{{
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Olical/conjure', { 'tag': 'v4.17.0' } " REPL integration
+Plug 'Olical/conjure', { 'tag': 'v4.17.0' } "REPL integration
 
 Plug 'm00qek/nvim-lsp' "Static analysis
 
-" autocomplete
-Plug 'nvim-lua/completion-nvim'
-" Plug 'm00qek/completion-conjure'
+Plug 'nvim-lua/completion-nvim' "Autocomplete
 
 " structural edition
 Plug 'guns/vim-sexp', { 'for': 'clojure' } | Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
@@ -98,32 +96,33 @@ Plug 'axelf4/vim-strip-trailing-whitespace' "Remove trailing space on save
 Plug 'luochen1990/rainbow' "Rainbow parentheses
 Plug 'preservim/nerdtree' "File tree
 Plug 'hashivim/vim-terraform' "Terraform
-Plug 'vim-test/vim-test' "Vim test
+Plug 'vim-test/vim-test', { 'for': ['dart'] } "Vim test
 Plug 'dense-analysis/ale' "Linting
 Plug 'preservim/nerdcommenter' "Comments
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim' " Search and much more
+Plug 'junegunn/fzf.vim' "Search and much more
 
-Plug 'tpope/vim-fugitive' " Git awesome commands
+Plug 'tpope/vim-fugitive' "Git awesome commands
 
-Plug 'airblade/vim-gitgutter' " Git modified lines
+Plug 'airblade/vim-gitgutter' "Git modified lines
 
-Plug 'szw/vim-maximizer' " Toggle maximize windows
+Plug 'szw/vim-maximizer' "Toggle maximize windows
 
 " vim-jack-in and its dependencies to start a REPL from Vim
 Plug 'tpope/vim-dispatch'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
 
-Plug 'vim-airline/vim-airline' " Status bar
+Plug 'vim-airline/vim-airline' "Status bar
 
-Plug 'stsewd/fzf-checkout.vim' " Git checkout using FZF
+Plug 'stsewd/fzf-checkout.vim' "Git checkout using FZF
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-call plug#end()
+Plug 'dart-lang/dart-vim-plugin'
 
+call plug#end()
 " }}}
 
 " Colors {{{
@@ -174,7 +173,7 @@ nnoremap <silent><Leader>- :MaximizerToggle<CR>
 " }}}
 
 " COC {{{
-let g:coc_global_extensions = ['coc-conjure', 'coc-json']
+let g:coc_global_extensions = ['coc-conjure', 'coc-json', 'coc-flutter']
 let g:coc_snippet_next = '<tab>'
 command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
 nmap <leader>rn <Plug>(coc-rename)
@@ -220,9 +219,8 @@ map <Leader>if :call SplitHorizontally()<CR><C-w>l:call OpenFile()<CR>
 
 " }}}
 
-" Clojure specific config {{{
+" Static analysis config {{{
 
-" static analysis config
 lua << EOF
 local on_attach_vim = function(client, bufnr)
   require'completion'.on_attach()
@@ -234,12 +232,6 @@ if ok then
 end
 EOF
 
-" use K to get docstring trough static analysis
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-
-" use C-] to jump to definition trough static analysis
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-
 " use static analysis engine to autocomplete, but get results also from REPL if
 " it is available
 let g:completion_auto_change_source = 1
@@ -248,10 +240,16 @@ let g:completion_chain_complete_list = {
 \   {'complete_items': ['conjure', 'lsp', 'snippet']}
 \ ]
 \}
+" }}}
 
-" Leave terminal mode with esc
+" Start REPL in new tab {{{
+map <C-s> :Lein repl<CR>
+" }}}
+
+" Leave terminal mode with esc {{{
 tnoremap <Esc> <C-\><C-n>
+" }}}
 
-" Start REPL in new tab
-map <C-r> :Lein repl<CR>
+" CDC = Change to Directory of Current file {{{
+command CDC cd %:p:h
 " }}}

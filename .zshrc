@@ -10,7 +10,7 @@ source $ZSH/oh-my-zsh.sh
 # Define aliases here! {{{
 alias ez="vim $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
-alias ev="vim $HOME/.config/nvim/init.vim"
+alias ev="vim ~/dotfiles/init.vim"
 
 # Alias to open nvim instead of vim
 alias vim="nvim"

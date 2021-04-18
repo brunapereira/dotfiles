@@ -41,7 +41,6 @@ T    -open silently in new tab
 :GFiles       -Git Files
 :GFiles?      -Git Status
 :Colors       -Change colorschema
-:Helptags     -Show available tags
 CTRL-T        -Open in new tab
 CTRL-X/CTRL-V -Open split
 
