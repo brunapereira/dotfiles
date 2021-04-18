@@ -1,14 +1,14 @@
 "ayy -copy line to buffer a
-"ap  -paste content of buffer a
-zt   -moves curr line to top
-zz   -moves curr line to middle
-zb   -moves curr line to bottom
-}    -go to next empty line
-{    -go to previous empty line
-I    -insert at the start of line
+"ap  -paste cont. of buffer a
+zt   -move curr line to top
+zz   -move curr line to middle
+zb   -move curr line to bottom
+}    -goto next empty line
+{    -goto previous empty line
+I    -insert start of line
 a    -insert after the cursor
 ZZ   -save and quit
-gv   -remark last visualselection
+gv   -remark last visual sel.
 ^T   -indent on insert mode
 ^D   -unindent on insert mode
 mx   -create bookmark
@@ -61,3 +61,7 @@ CTRL-X/CTRL-V -Open split
 # Find and replace
 :Rg -Open screen to search
 ,R  -Replace all under cursor
+
+# COC
+,rn -rename
+:OR -organize imports
